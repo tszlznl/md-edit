@@ -3,7 +3,7 @@ use crate::{
     editor::Editor,
     markdown::MarkdownRenderer,
     preview::Preview,
-    theme::{Theme, ThemeMode},
+    theme::Theme,
     ui::layouts::{EditorLayout, LayoutMode, SplitDirection},
 };
 use eframe::egui;

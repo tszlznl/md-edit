@@ -1,5 +1,7 @@
+use serde::{Deserialize, Serialize};
+
 /// Defines the layout modes for the editor
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize, Deserialize)]
 pub enum LayoutMode {
     /// Only show the editor
     EditorOnly,
@@ -16,7 +18,7 @@ impl Default for LayoutMode {
 }
 
 /// Direction for split layouts
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize, Deserialize)]
 pub enum SplitDirection {
     /// Split horizontally (editor on left, preview on right)
     Horizontal,

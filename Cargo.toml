@@ -27,6 +27,7 @@ image = "0.25"
 
 # File operations
 rfd = "0.15"  # Native file dialogs
+dirs = "5.0"
 
 # Async runtime for file I/O
 tokio = { version = "1.42", features = ["full"] }

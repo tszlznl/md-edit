@@ -129,7 +129,7 @@ impl ToolbarButton {
         if self.enabled {
             response
         } else {
-            response.sense(egui::Sense::hover())
+            // response.sense(egui::Sense::hover())
         }
     }
 }
@@ -185,24 +185,24 @@ impl CodeBlock {
     pub fn show(&self, ui: &mut egui::Ui, theme: &crate::theme::Theme) {
         egui::Frame::none()
             .fill(theme.code_bg)
-            .corner_radius(6.0)
+            .rounding(6.0)
             .inner_margin(12.0)
-            .show(ui, |ui| {
+            .show(ui, |_ui: &mut egui::Ui| {
                 // Language label
                 if let Some(lang) = &self.language {
-                    ui.label(
+                    _ui.label(
                         egui::RichText::new(lang)
                             .size(12.0)
                             .color(theme.text_muted)
                             .monospace(),
                     );
-                    ui.add_space(4.0);
+                    _ui.add_space(4.0);
                 }
 
                 // Code content with scroll area if needed
                 egui::ScrollArea::horizontal()
                     .auto_shrink([false, true])
-                    .show(ui, |ui| {
+                    .show(_ui, |ui| {
                         ui.label(
                             egui::RichText::new(&self.code)
                                 .monospace()

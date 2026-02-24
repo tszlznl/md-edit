@@ -57,7 +57,7 @@ impl MarkdownRenderer {
                                 last.1.push(Vec::new());
                             }
                         }
-                        Tag::BlockQuote => {
+                        Tag::BlockQuote(_) => {
                             if let Some(elem) = current_element.take() {
                                 elements.push(elem);
                             }
@@ -90,7 +90,7 @@ impl MarkdownRenderer {
                                 }
                             }
                         }
-                        TagEnd::BlockQuote => {
+                        TagEnd::BlockQuote(_) => {
                             if let Some(items) = blockquote_stack.pop() {
                                 if let Some(elem) = current_element.take() {
                                     elements.push(elem);

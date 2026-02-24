@@ -25,8 +25,6 @@ fn main() -> eframe::Result {
             .with_inner_size([1400.0, 900.0])
             .with_min_inner_size([800.0, 600.0])
             .with_title("RMD - Markdown Editor"),
-        follow_system_theme: true,
-        default_theme: eframe::Theme::System,
         ..Default::default()
     };
 

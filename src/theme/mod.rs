@@ -1,5 +1,4 @@
 use eframe::egui;
-use crate::config::ThemeMode;
 
 /// Application theme
 #[derive(Clone, Debug)]
@@ -93,11 +92,11 @@ impl Theme {
     }
 
     /// Create a theme from ThemeMode
-    pub fn from_mode(mode: ThemeMode) -> Self {
+    pub fn from_mode(mode: crate::config::ThemeMode) -> Self {
         match mode {
-            ThemeMode::Light => Self::light(),
-            ThemeMode::Dark => Self::dark(),
-            ThemeMode::System => {
+            crate::config::ThemeMode::Light => Self::light(),
+            crate::config::ThemeMode::Dark => Self::dark(),
+            crate::config::ThemeMode::System => {
                 // Check system preference
                 // For now, default to dark
                 Self::dark()
@@ -112,16 +111,3 @@ impl Default for Theme {
     }
 }
 
-/// Theme mode
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum ThemeMode {
-    Light,
-    Dark,
-    System,
-}
-
-impl Default for ThemeMode {
-    fn default() -> Self {
-        ThemeMode::System
-    }
-}

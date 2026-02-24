@@ -71,7 +71,11 @@ impl Preview {
         match element {
             RenderedElement::Paragraph(text) |
             RenderedElement::Heading(_, text) => text.split_whitespace().count(),
-            RenderedElement::BlockQuote(items) |
+            RenderedElement::BlockQuote(items) => {
+                items.iter().map(|item| {
+                    Self::count_words_in_element(item)
+                }).sum()
+            }
             RenderedElement::UnorderedList(items) |
             RenderedElement::OrderedList(items) => {
                 items.iter().map(|item| {
