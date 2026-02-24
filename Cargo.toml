@@ -1,0 +1,67 @@
+[package]
+name = "rmd"
+version = "0.1.0"
+edition = "2021"
+authors = ["Your Name <your.email@example.com>"]
+description = "A fast, native Windows Markdown editor with real-time preview"
+license = "MIT"
+repository = "https://github.com/yourusername/rmd"
+
+[dependencies]
+# GUI framework
+eframe = { version = "0.29", features = ["default", "persistence"] }
+egui = { version = "0.29", features = ["default", "callstack"] }
+
+# Markdown parsing and rendering
+pulldown-cmark = "0.12"
+comrak = "0.31"
+
+# Syntax highlighting for code blocks
+syntect = "5.2"
+
+# HTML rendering
+html5ever = "0.29"
+
+# Image handling
+image = "0.25"
+
+# File operations
+rfd = "0.15"  # Native file dialogs
+
+# Async runtime for file I/O
+tokio = { version = "1.42", features = ["full"] }
+
+# Configuration
+serde = { version = "1.0", features = ["derive"] }
+toml = "0.8"
+
+# Logging
+log = "0.4"
+env_logger = "0.11"
+
+# Error handling
+anyhow = "1.0"
+thiserror = "2.0"
+
+# Internationalization
+i18n-embed = { version = "0.15", features = ["fluent-system"] }
+i18n-embed-fl = "0.9"
+
+# Open links in browser
+webbrowser = "1.0"
+
+[dev-dependencies]
+criterion = "0.5"  # Benchmarking
+
+[[bin]]
+name = "rmd"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true
+panic = "abort"
+
+[profile.dev]
+opt-level = 1
