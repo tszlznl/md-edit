@@ -284,7 +284,7 @@ impl RmdApp {
     /// Render the preview panel
     fn render_preview(&mut self, ui: &mut egui::Ui) {
         egui::CentralPanel::default()
-            .frame(egui::Frame::central_panel(ui.style()).inner_margin(16))
+            .frame(egui::Frame::central_panel(ui.style()).inner_margin(16.0))
             .show_inside(ui, |ui| {
                 egui::ScrollArea::vertical()
                     .auto_shrink([false, false])
@@ -351,7 +351,7 @@ impl RmdApp {
                 egui::Frame::none()
                     .fill(self.theme.code_bg)
                     .rounding(6.0)
-                    .inner_margin(12)
+                    .inner_margin(12.0)
                     .show(ui, |ui| {
                         if !lang.is_empty() {
                             ui.label(
@@ -381,7 +381,7 @@ impl RmdApp {
                 ui.add_space(8.0);
                 egui::Frame::none()
                     .fill(self.theme.surface)
-                    .inner_margin(12)
+                    .inner_margin(12.0)
                     .rounding(4.0)
                     .show(ui, |ui| {
                         for item in items {
@@ -436,7 +436,7 @@ impl RmdApp {
                 egui::Frame::none()
                     .fill(self.theme.surface)
                     .rounding(6.0)
-                    .inner_margin(16)
+                    .inner_margin(16.0)
                     .show(ui, |ui| {
                         ui.vertical_centered(|ui| {
                             ui.label(egui::RichText::new("🖼").size(48.0));
@@ -453,7 +453,7 @@ impl RmdApp {
                 egui::Frame::none()
                     .fill(self.theme.code_bg)
                     .rounding(4.0)
-                    .inner_margin(8)
+                    .inner_margin(8.0)
                     .show(ui, |ui| {
                         ui.label(
                             egui::RichText::new(html)

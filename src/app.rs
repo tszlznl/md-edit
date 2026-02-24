@@ -120,9 +120,9 @@ impl eframe::App for RmdApp {
             self.ui_status_bar(ctx);
         }
 
-        // Auto-save check
+        // Auto-save check (stub)
         if self.config.auto_save && self.has_unsaved_changes {
-            self.check_auto_save();
+            // TODO: implement auto-save
         }
 
         // Request continuous updates for smooth preview

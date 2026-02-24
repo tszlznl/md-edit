@@ -114,7 +114,7 @@ impl TextBuffer {
     }
 
     /// Get the line and column from a byte offset
-    pub fn line_col_from_byte_index(&self, byte_index: usize) -> (usize, usize) {
+    pub fn line_col_from_byte_index(&mut self, byte_index: usize) -> (usize, usize) {
         self.rebuild_line_cache_if_needed();
 
         // Binary search for the line
@@ -130,7 +130,7 @@ impl TextBuffer {
     }
 
     /// Get the byte offset from a line and column
-    pub fn byte_index_from_line_col(&self, line: usize, col: usize) -> usize {
+    pub fn byte_index_from_line_col(&mut self, line: usize, col: usize) -> usize {
         self.rebuild_line_cache_if_needed();
 
         if line >= self.line_starts.len() {
@@ -149,7 +149,7 @@ impl TextBuffer {
     }
 
     /// Get the number of lines
-    pub fn line_count(&self) -> usize {
+    pub fn line_count(&mut self) -> usize {
         self.rebuild_line_cache_if_needed();
         self.line_starts.len()
     }

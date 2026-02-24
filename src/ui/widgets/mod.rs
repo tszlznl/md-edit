@@ -186,24 +186,24 @@ impl CodeBlock {
         egui::Frame::none()
             .fill(theme.code_bg)
             .rounding(6.0)
-            .inner_margin(12.0)
-            .show(ui, |_ui: &mut egui::Ui| {
+            .inner_margin(12)
+            .show(ui, |ui2| {
                 // Language label
                 if let Some(lang) = &self.language {
-                    _ui.label(
+                    ui2.label(
                         egui::RichText::new(lang)
                             .size(12.0)
                             .color(theme.text_muted)
                             .monospace(),
                     );
-                    _ui.add_space(4.0);
+                    ui2.add_space(4.0);
                 }
 
                 // Code content with scroll area if needed
                 egui::ScrollArea::horizontal()
                     .auto_shrink([false, true])
-                    .show(_ui, |ui| {
-                        ui.label(
+                    .show(ui2, |ui3| {
+                        ui3.label(
                             egui::RichText::new(&self.code)
                                 .monospace()
                                 .size(14.0)
