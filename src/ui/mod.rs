@@ -2,14 +2,13 @@ pub mod layouts;
 pub mod widgets;
 
 use crate::app::RmdApp;
-use crate::ui::layouts::{EditorLayout, LayoutMode};
+use crate::ui::layouts::LayoutMode;
 use eframe::egui;
-use std::path::Path;
 
 /// UI components for RMD
 impl RmdApp {
     /// Render the menu bar
-    pub fn ui_menu_bar(&mut self, ctx: &egui::Context, frame: &mut eframe::Frame) {
+    pub fn ui_menu_bar(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
         egui::TopBottomPanel::top("menu_bar").show(ctx, |ui| {
         egui::menu::bar(ui, |ui| {
             ui.menu_button("File", |ui| {

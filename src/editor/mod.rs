@@ -2,8 +2,7 @@ pub mod highlighter;
 pub mod text_buffer;
 
 use crate::config::EditorConfig;
-use crate::theme::Theme;
-use egui::{text::CCursor, text_edit::TextEditState, *};
+use egui::{text_edit::TextEditState, *};
 use std::path::Path;
 use text_buffer::TextBuffer;
 

@@ -123,7 +123,7 @@ impl ToolbarButton {
         let response = ui.add_sized(egui::vec2(32.0, 32.0), button);
 
         if let Some(tooltip) = self.tooltip {
-            response.on_hover_text(tooltip);
+            return response.on_hover_text(tooltip);
         }
 
         response

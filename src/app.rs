@@ -4,7 +4,7 @@ use crate::{
     markdown::MarkdownRenderer,
     preview::Preview,
     theme::Theme,
-    ui::layouts::{EditorLayout, LayoutMode, SplitDirection},
+    ui::layouts::EditorLayout,
 };
 use eframe::egui;
 use std::path::PathBuf;
@@ -92,7 +92,7 @@ impl eframe::App for RmdApp {
             if !i.raw.dropped_files.is_empty() {
                 if let Some(file) = i.raw.dropped_files.first() {
                     if let Some(ref path) = file.path {
-                        self.editor.open_file(path);
+                        let _ = self.editor.open_file(path);
                         self.current_file = Some(path.clone());
                         self.has_unsaved_changes = false;
                     }

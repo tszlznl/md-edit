@@ -1,5 +1,4 @@
-use crate::markdown::{MarkdownRenderer, RenderedElement};
-use crate::theme::Theme;
+use crate::markdown::RenderedElement;
 
 /// Preview panel for rendered Markdown
 pub struct Preview {
