@@ -155,7 +155,7 @@ impl TextBuffer {
     }
 
     /// Get the text of a specific line (without newline)
-    pub fn line_text(&self, line: usize) -> Option<String> {
+    pub fn line_text(&mut self, line: usize) -> Option<String> {
         self.rebuild_line_cache_if_needed();
 
         if line >= self.line_starts.len() {

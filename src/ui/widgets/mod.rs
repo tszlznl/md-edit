@@ -126,11 +126,7 @@ impl ToolbarButton {
             response.on_hover_text(tooltip);
         }
 
-        if self.enabled {
-            response
-        } else {
-            // response.sense(egui::Sense::hover())
-        }
+        response
     }
 }
 
@@ -186,7 +182,7 @@ impl CodeBlock {
         egui::Frame::none()
             .fill(theme.code_bg)
             .rounding(6.0)
-            .inner_margin(12)
+            .inner_margin(12.0)
             .show(ui, |ui2| {
                 // Language label
                 if let Some(lang) = &self.language {
